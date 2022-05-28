@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_Star_SecurityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_branches">
+    <Key>
+      <PropertyRef Name="branch_id" />
+    </Key>
+    <Property Name="branch_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contact_details" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contact_person" Type="Int32" Nullable="false" />
+    <Property Name="admin_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_Users" Relationship="Self.FK__tb_branch__admin__49C3F6B7" FromRole="tb_branches" ToRole="tb_Users" />
+  </EntityType>
+  <EntityType Name="tb_Client_Sub_Services">
+    <Key>
+      <PropertyRef Name="client_sub_service_id" />
+    </Key>
+    <Property Name="client_sub_service_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sub_service_id" Type="Int32" Nullable="false" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="staff_id_emp" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_Users" Relationship="Self.FK__tb_Client__clien__4D94879B" FromRole="tb_Client_Sub_Services" ToRole="tb_Users" />
+    <NavigationProperty Name="tb_Users1" Relationship="Self.FK__tb_Client__staff__4E88ABD4" FromRole="tb_Client_Sub_Services" ToRole="tb_Users" />
+    <NavigationProperty Name="tb_Sub_Services" Relationship="Self.FK__tb_Client__sub_s__4CA06362" FromRole="tb_Client_Sub_Services" ToRole="tb_Sub_Services" />
+  </EntityType>
+  <EntityType Name="tb_Services">
+    <Key>
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="service_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="service_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="admin_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_Users" Relationship="Self.FK__tb_Servic__admin__3E52440B" FromRole="tb_Services" ToRole="tb_Users" />
+    <NavigationProperty Name="tb_Sub_Services" Relationship="Self.FK__tb_Sub_Se__servi__412EB0B6" FromRole="tb_Services" ToRole="tb_Sub_Services" />
+  </EntityType>
+  <EntityType Name="tb_Sub_Services">
+    <Key>
+      <PropertyRef Name="sub_service_id" />
+    </Key>
+    <Property Name="sub_service_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sub_service_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="price" Type="Int32" Nullable="false" />
+    <Property Name="service_id" Type="Int32" Nullable="false" />
+    <Property Name="admin_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_Client_Sub_Services" Relationship="Self.FK__tb_Client__sub_s__4CA06362" FromRole="tb_Sub_Services" ToRole="tb_Client_Sub_Services" />
+    <NavigationProperty Name="tb_Services" Relationship="Self.FK__tb_Sub_Se__servi__412EB0B6" FromRole="tb_Sub_Services" ToRole="tb_Services" />
+    <NavigationProperty Name="tb_Users" Relationship="Self.FK__tb_Sub_Se__admin__4222D4EF" FromRole="tb_Sub_Services" ToRole="tb_Users" />
+    <NavigationProperty Name="tb_Vacancies" Relationship="Self.FK__tb_Vacanc__sub_s__45F365D3" FromRole="tb_Sub_Services" ToRole="tb_Vacancies" />
+  </EntityType>
+  <EntityType Name="tb_Users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="emp_code" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contact_num" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="qualification" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="grade" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="achievements" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="services_availed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="admin_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_branches" Relationship="Self.FK__tb_branch__admin__49C3F6B7" FromRole="tb_Users" ToRole="tb_branches" />
+    <NavigationProperty Name="tb_Client_Sub_Services" Relationship="Self.FK__tb_Client__clien__4D94879B" FromRole="tb_Users" ToRole="tb_Client_Sub_Services" />
+    <NavigationProperty Name="tb_Client_Sub_Services1" Relationship="Self.FK__tb_Client__staff__4E88ABD4" FromRole="tb_Users" ToRole="tb_Client_Sub_Services" />
+    <NavigationProperty Name="tb_Services" Relationship="Self.FK__tb_Servic__admin__3E52440B" FromRole="tb_Users" ToRole="tb_Services" />
+    <NavigationProperty Name="tb_Sub_Services" Relationship="Self.FK__tb_Sub_Se__admin__4222D4EF" FromRole="tb_Users" ToRole="tb_Sub_Services" />
+    <NavigationProperty Name="tb_Users1" Relationship="Self.FK__tb_Users__admin___37A5467C" FromRole="tb_Users" ToRole="tb_Users1" />
+    <NavigationProperty Name="tb_Users2" Relationship="Self.FK__tb_Users__admin___37A5467C" FromRole="tb_Users1" ToRole="tb_Users" />
+    <NavigationProperty Name="tb_Vacancies" Relationship="Self.FK__tb_Vacanc__admin__46E78A0C" FromRole="tb_Users" ToRole="tb_Vacancies" />
+  </EntityType>
+  <EntityType Name="tb_Vacancies">
+    <Key>
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="job_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="job_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="job_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="job_requirements" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="job_department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sub_service_id" Type="Int32" Nullable="false" />
+    <Property Name="admin_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_Sub_Services" Relationship="Self.FK__tb_Vacanc__sub_s__45F365D3" FromRole="tb_Vacancies" ToRole="tb_Sub_Services" />
+    <NavigationProperty Name="tb_Users" Relationship="Self.FK__tb_Vacanc__admin__46E78A0C" FromRole="tb_Vacancies" ToRole="tb_Users" />
+  </EntityType>
+  <Association Name="FK__tb_branch__admin__49C3F6B7">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="1" />
+    <End Role="tb_branches" Type="Self.tb_branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tb_branches">
+        <PropertyRef Name="admin_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Client__clien__4D94879B">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="1" />
+    <End Role="tb_Client_Sub_Services" Type="Self.tb_Client_Sub_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tb_Client_Sub_Services">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Client__staff__4E88ABD4">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="1" />
+    <End Role="tb_Client_Sub_Services" Type="Self.tb_Client_Sub_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tb_Client_Sub_Services">
+        <PropertyRef Name="staff_id_emp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Client__sub_s__4CA06362">
+    <End Role="tb_Sub_Services" Type="Self.tb_Sub_Services" Multiplicity="1" />
+    <End Role="tb_Client_Sub_Services" Type="Self.tb_Client_Sub_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Sub_Services">
+        <PropertyRef Name="sub_service_id" />
+      </Principal>
+      <Dependent Role="tb_Client_Sub_Services">
+        <PropertyRef Name="sub_service_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Servic__admin__3E52440B">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="1" />
+    <End Role="tb_Services" Type="Self.tb_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tb_Services">
+        <PropertyRef Name="admin_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Sub_Se__servi__412EB0B6">
+    <End Role="tb_Services" Type="Self.tb_Services" Multiplicity="1" />
+    <End Role="tb_Sub_Services" Type="Self.tb_Sub_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Services">
+        <PropertyRef Name="service_id" />
+      </Principal>
+      <Dependent Role="tb_Sub_Services">
+        <PropertyRef Name="service_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Sub_Se__admin__4222D4EF">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="1" />
+    <End Role="tb_Sub_Services" Type="Self.tb_Sub_Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tb_Sub_Services">
+        <PropertyRef Name="admin_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Vacanc__sub_s__45F365D3">
+    <End Role="tb_Sub_Services" Type="Self.tb_Sub_Services" Multiplicity="1" />
+    <End Role="tb_Vacancies" Type="Self.tb_Vacancies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Sub_Services">
+        <PropertyRef Name="sub_service_id" />
+      </Principal>
+      <Dependent Role="tb_Vacancies">
+        <PropertyRef Name="sub_service_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Users__admin___37A5467C">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="1" />
+    <End Role="tb_Users1" Type="Self.tb_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tb_Users1">
+        <PropertyRef Name="admin_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Vacanc__admin__46E78A0C">
+    <End Role="tb_Users" Type="Self.tb_Users" Multiplicity="1" />
+    <End Role="tb_Vacancies" Type="Self.tb_Vacancies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="tb_Vacancies">
+        <PropertyRef Name="admin_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_Star_SecurityEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_branches" EntityType="Self.tb_branches" />
+    <EntitySet Name="tb_Client_Sub_Services" EntityType="Self.tb_Client_Sub_Services" />
+    <EntitySet Name="tb_Services" EntityType="Self.tb_Services" />
+    <EntitySet Name="tb_Sub_Services" EntityType="Self.tb_Sub_Services" />
+    <EntitySet Name="tb_Users" EntityType="Self.tb_Users" />
+    <EntitySet Name="tb_Vacancies" EntityType="Self.tb_Vacancies" />
+    <AssociationSet Name="FK__tb_branch__admin__49C3F6B7" Association="Self.FK__tb_branch__admin__49C3F6B7">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_branches" EntitySet="tb_branches" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Client__clien__4D94879B" Association="Self.FK__tb_Client__clien__4D94879B">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_Client_Sub_Services" EntitySet="tb_Client_Sub_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Client__staff__4E88ABD4" Association="Self.FK__tb_Client__staff__4E88ABD4">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_Client_Sub_Services" EntitySet="tb_Client_Sub_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Client__sub_s__4CA06362" Association="Self.FK__tb_Client__sub_s__4CA06362">
+      <End Role="tb_Sub_Services" EntitySet="tb_Sub_Services" />
+      <End Role="tb_Client_Sub_Services" EntitySet="tb_Client_Sub_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Servic__admin__3E52440B" Association="Self.FK__tb_Servic__admin__3E52440B">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_Services" EntitySet="tb_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Sub_Se__servi__412EB0B6" Association="Self.FK__tb_Sub_Se__servi__412EB0B6">
+      <End Role="tb_Services" EntitySet="tb_Services" />
+      <End Role="tb_Sub_Services" EntitySet="tb_Sub_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Sub_Se__admin__4222D4EF" Association="Self.FK__tb_Sub_Se__admin__4222D4EF">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_Sub_Services" EntitySet="tb_Sub_Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Vacanc__sub_s__45F365D3" Association="Self.FK__tb_Vacanc__sub_s__45F365D3">
+      <End Role="tb_Sub_Services" EntitySet="tb_Sub_Services" />
+      <End Role="tb_Vacancies" EntitySet="tb_Vacancies" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Users__admin___37A5467C" Association="Self.FK__tb_Users__admin___37A5467C">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_Users1" EntitySet="tb_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Vacanc__admin__46E78A0C" Association="Self.FK__tb_Vacanc__admin__46E78A0C">
+      <End Role="tb_Users" EntitySet="tb_Users" />
+      <End Role="tb_Vacancies" EntitySet="tb_Vacancies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

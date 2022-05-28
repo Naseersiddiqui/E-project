@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_Star_SecurityModelStoreContainer" CdmEntityContainer="db_Star_SecurityEntities">
+    <EntitySetMapping Name="tb_branches">
+      <EntityTypeMapping TypeName="db_Star_SecurityModel.tb_branches">
+        <MappingFragment StoreEntitySet="tb_branches">
+          <ScalarProperty Name="branch_id" ColumnName="branch_id" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="contact_details" ColumnName="contact_details" />
+          <ScalarProperty Name="contact_person" ColumnName="contact_person" />
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Client_Sub_Services">
+      <EntityTypeMapping TypeName="db_Star_SecurityModel.tb_Client_Sub_Services">
+        <MappingFragment StoreEntitySet="tb_Client_Sub_Services">
+          <ScalarProperty Name="client_sub_service_id" ColumnName="client_sub_service_id" />
+          <ScalarProperty Name="sub_service_id" ColumnName="sub_service_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="staff_id_emp" ColumnName="staff_id_emp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Services">
+      <EntityTypeMapping TypeName="db_Star_SecurityModel.tb_Services">
+        <MappingFragment StoreEntitySet="tb_Services">
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="service_name" ColumnName="service_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Sub_Services">
+      <EntityTypeMapping TypeName="db_Star_SecurityModel.tb_Sub_Services">
+        <MappingFragment StoreEntitySet="tb_Sub_Services">
+          <ScalarProperty Name="sub_service_id" ColumnName="sub_service_id" />
+          <ScalarProperty Name="sub_service_name" ColumnName="sub_service_name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Users">
+      <EntityTypeMapping TypeName="db_Star_SecurityModel.tb_Users">
+        <MappingFragment StoreEntitySet="tb_Users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="emp_code" ColumnName="emp_code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="contact_num" ColumnName="contact_num" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+          <ScalarProperty Name="client" ColumnName="client" />
+          <ScalarProperty Name="achievements" ColumnName="achievements" />
+          <ScalarProperty Name="services_availed" ColumnName="services_availed" />
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Vacancies">
+      <EntityTypeMapping TypeName="db_Star_SecurityModel.tb_Vacancies">
+        <MappingFragment StoreEntitySet="tb_Vacancies">
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="job_title" ColumnName="job_title" />
+          <ScalarProperty Name="job_description" ColumnName="job_description" />
+          <ScalarProperty Name="job_requirements" ColumnName="job_requirements" />
+          <ScalarProperty Name="job_department" ColumnName="job_department" />
+          <ScalarProperty Name="sub_service_id" ColumnName="sub_service_id" />
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

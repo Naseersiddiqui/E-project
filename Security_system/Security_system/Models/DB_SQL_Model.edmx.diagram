@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a23cc66bfe3c43d58c6c45fa02334760" Name="Diagram1">
+        <EntityTypeShape EntityType="db_Star_SecurityModel.tb_branches" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_Star_SecurityModel.tb_Client_Sub_Services" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_Star_SecurityModel.tb_Services" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_Star_SecurityModel.tb_Sub_Services" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_Star_SecurityModel.tb_Users" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_Star_SecurityModel.tb_Vacancies" Width="1.5" PointX="8.5" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="db_Star_SecurityModel.FK__tb_branch__admin__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="db_Star_SecurityModel.FK__tb_Client__clien__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="db_Star_SecurityModel.FK__tb_Client__staff__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="db_Star_SecurityModel.FK__tb_Client__sub_s__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="db_Star_SecurityModel.FK__tb_Servic__admin__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="db_Star_SecurityModel.FK__tb_Sub_Se__servi__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="db_Star_SecurityModel.FK__tb_Sub_Se__admin__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="db_Star_SecurityModel.FK__tb_Vacanc__sub_s__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="db_Star_SecurityModel.FK__tb_Users__admin___37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="db_Star_SecurityModel.FK__tb_Vacanc__admin__46E78A0C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

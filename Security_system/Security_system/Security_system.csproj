@@ -1,0 +1,497 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.AspNetCore.Identity.UI.6.0.5\build\Microsoft.AspNetCore.Identity.UI.props" Condition="Exists('..\packages\Microsoft.AspNetCore.Identity.UI.6.0.5\build\Microsoft.AspNetCore.Identity.UI.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3892C91C-1B08-47CB-B3BF-3E405CCFB0B6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Security_system</RootNamespace>
+    <AssemblyName>Security_system</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44378</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NuGet.Frameworks, Version=6.2.0.146, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Frameworks.6.2.0\lib\net472\NuGet.Frameworks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Models\DB_SQL_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DB_SQL_Model.Context.cs</LastGenOutput>
+      <DependentUpon>DB_SQL_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DB_SQL_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DB_SQL_Model.edmx</DependentUpon>
+      <LastGenOutput>DB_SQL_Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Admin\src\plugins\apexcharts\apexcharts.min.js" />
+    <Content Include="Templates\Admin\src\plugins\bootstrap-tagsinput\bootstrap-tagsinput.css" />
+    <Content Include="Templates\Admin\src\plugins\bootstrap-tagsinput\bootstrap-tagsinput.js" />
+    <Content Include="Templates\Admin\src\plugins\bootstrap-touchspin\jquery.bootstrap-touchspin.css" />
+    <Content Include="Templates\Admin\src\plugins\bootstrap-touchspin\jquery.bootstrap-touchspin.js" />
+    <Content Include="Templates\Admin\src\plugins\cropperjs\dist\cropper-init.js" />
+    <Content Include="Templates\Admin\src\plugins\cropperjs\dist\cropper.css" />
+    <Content Include="Templates\Admin\src\plugins\cropperjs\dist\cropper.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Templates\Admin\src\plugins\datatables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\buttons.bootstrap4.min.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\buttons.flash.min.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\buttons.html5.min.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\buttons.print.min.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\dataTables.buttons.min.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\dataTables.responsive.min.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\pdfmake.min.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\responsive.bootstrap4.min.js" />
+    <Content Include="Templates\Admin\src\plugins\datatables\js\vfs_fonts.js" />
+    <Content Include="Templates\Admin\src\plugins\dropzone\src\dropzone.css" />
+    <Content Include="Templates\Admin\src\plugins\dropzone\src\dropzone.js" />
+    <Content Include="Templates\Admin\src\plugins\fancybox\dist\jquery.fancybox.css" />
+    <Content Include="Templates\Admin\src\plugins\fancybox\dist\jquery.fancybox.js" />
+    <Content Include="Templates\Admin\src\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Templates\Admin\src\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Templates\Admin\src\plugins\highcharts-6.0.7\code\highcharts-more.js" />
+    <Content Include="Templates\Admin\src\plugins\highcharts-6.0.7\code\highcharts.js" />
+    <Content Include="Templates\Admin\src\plugins\ion-rangeslider\css\ion.rangeSlider.css" />
+    <Content Include="Templates\Admin\src\plugins\ion-rangeslider\js\ion.rangeSlider.min.js" />
+    <Content Include="Templates\Admin\src\plugins\jquery-asColorPicker\dist\css\asColorPicker.css" />
+    <Content Include="Templates\Admin\src\plugins\jquery-asColorPicker\dist\images\alpha.png" />
+    <Content Include="Templates\Admin\src\plugins\jquery-asColorPicker\dist\images\hue.png" />
+    <Content Include="Templates\Admin\src\plugins\jquery-asColorPicker\dist\images\saturation.png" />
+    <Content Include="Templates\Admin\src\plugins\jquery-asColorPicker\dist\images\transparent.png" />
+    <Content Include="Templates\Admin\src\plugins\jquery-asColorPicker\jquery-asColorPicker.js" />
+    <Content Include="Templates\Admin\src\plugins\jquery-asColor\dist\jquery-asColor.js" />
+    <Content Include="Templates\Admin\src\plugins\jquery-asGradient\dist\jquery-asGradient.js" />
+    <Content Include="Templates\Admin\src\plugins\jQuery-Knob-master\jquery.knob.min.js" />
+    <Content Include="Templates\Admin\src\plugins\jquery-steps\jquery.steps.css" />
+    <Content Include="Templates\Admin\src\plugins\jquery-steps\jquery.steps.js" />
+    <Content Include="Templates\Admin\src\plugins\jvectormap\jquery-jvectormap-2.0.3.css" />
+    <Content Include="Templates\Admin\src\plugins\jvectormap\jquery-jvectormap-2.0.3.min.js" />
+    <Content Include="Templates\Admin\src\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Templates\Admin\src\plugins\plyr\dist\plyr.css" />
+    <Content Include="Templates\Admin\src\plugins\plyr\dist\plyr.js" />
+    <Content Include="Templates\Admin\src\plugins\slick\slick.css" />
+    <Content Include="Templates\Admin\src\plugins\slick\slick.min.js" />
+    <Content Include="Templates\Admin\src\plugins\sweetalert2\sweet-alert.init.js" />
+    <Content Include="Templates\Admin\src\plugins\sweetalert2\sweetalert2.all.js" />
+    <Content Include="Templates\Admin\src\plugins\sweetalert2\sweetalert2.css" />
+    <Content Include="Templates\Admin\src\plugins\switchery\switchery.min.css" />
+    <Content Include="Templates\Admin\src\plugins\switchery\switchery.min.js" />
+    <Content Include="Templates\Admin\vendors\fonts\dropways4412.svg" />
+    <Content Include="Templates\Admin\vendors\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Templates\Admin\vendors\fonts\foundation-icons.svg" />
+    <Content Include="Templates\Admin\vendors\fonts\ionicons790f.svg" />
+    <Content Include="Templates\Admin\vendors\fonts\themify9f24.svg" />
+    <Content Include="Templates\Admin\vendors\images\apple-touch-icon.png" />
+    <Content Include="Templates\Admin\vendors\images\banner-img.png" />
+    <Content Include="Templates\Admin\vendors\images\briefcase.svg" />
+    <Content Include="Templates\Admin\vendors\images\caution-sign.png" />
+    <Content Include="Templates\Admin\vendors\images\chat-img1.jpg" />
+    <Content Include="Templates\Admin\vendors\images\chat-img2.jpg" />
+    <Content Include="Templates\Admin\vendors\images\check-mark-green.png" />
+    <Content Include="Templates\Admin\vendors\images\check-mark.png" />
+    <Content Include="Templates\Admin\vendors\images\chrome.png" />
+    <Content Include="Templates\Admin\vendors\images\coming-soon.png" />
+    <Content Include="Templates\Admin\vendors\images\cross.png" />
+    <Content Include="Templates\Admin\vendors\images\deskapp-logo-white.svg" />
+    <Content Include="Templates\Admin\vendors\images\deskapp-logo.html" />
+    <Content Include="Templates\Admin\vendors\images\deskapp-logo.svg" />
+    <Content Include="Templates\Admin\vendors\images\edge.png" />
+    <Content Include="Templates\Admin\vendors\images\favicon-16x16.png" />
+    <Content Include="Templates\Admin\vendors\images\favicon-32x32.png" />
+    <Content Include="Templates\Admin\vendors\images\firefox.png" />
+    <Content Include="Templates\Admin\vendors\images\forgot-password.png" />
+    <Content Include="Templates\Admin\vendors\images\github.svg" />
+    <Content Include="Templates\Admin\vendors\images\icon-Cash.png" />
+    <Content Include="Templates\Admin\vendors\images\icon-debit.png" />
+    <Content Include="Templates\Admin\vendors\images\icon-online-wallet.png" />
+    <Content Include="Templates\Admin\vendors\images\img.jpg" />
+    <Content Include="Templates\Admin\vendors\images\img1.jpg" />
+    <Content Include="Templates\Admin\vendors\images\img2.jpg" />
+    <Content Include="Templates\Admin\vendors\images\img3.jpg" />
+    <Content Include="Templates\Admin\vendors\images\img4.jpg" />
+    <Content Include="Templates\Admin\vendors\images\img5.jpg" />
+    <Content Include="Templates\Admin\vendors\images\layout\header-dark.png" />
+    <Content Include="Templates\Admin\vendors\images\layout\header-white.png" />
+    <Content Include="Templates\Admin\vendors\images\layout\sidebar-dark.png" />
+    <Content Include="Templates\Admin\vendors\images\layout\sidebar-white.png" />
+    <Content Include="Templates\Admin\vendors\images\login-page-img.png" />
+    <Content Include="Templates\Admin\vendors\images\modal-img1.jpg" />
+    <Content Include="Templates\Admin\vendors\images\modal-img2.jpg" />
+    <Content Include="Templates\Admin\vendors\images\modal-img3.jpg" />
+    <Content Include="Templates\Admin\vendors\images\opera.png" />
+    <Content Include="Templates\Admin\vendors\images\person.svg" />
+    <Content Include="Templates\Admin\vendors\images\photo1.jpg" />
+    <Content Include="Templates\Admin\vendors\images\photo2.jpg" />
+    <Content Include="Templates\Admin\vendors\images\photo3.jpg" />
+    <Content Include="Templates\Admin\vendors\images\photo4.jpg" />
+    <Content Include="Templates\Admin\vendors\images\product-1.jpg" />
+    <Content Include="Templates\Admin\vendors\images\product-2.jpg" />
+    <Content Include="Templates\Admin\vendors\images\product-3.jpg" />
+    <Content Include="Templates\Admin\vendors\images\product-4.jpg" />
+    <Content Include="Templates\Admin\vendors\images\product-5.jpg" />
+    <Content Include="Templates\Admin\vendors\images\product-img1.jpg" />
+    <Content Include="Templates\Admin\vendors\images\product-img2.jpg" />
+    <Content Include="Templates\Admin\vendors\images\product-img3.jpg" />
+    <Content Include="Templates\Admin\vendors\images\product-img4.jpg" />
+    <Content Include="Templates\Admin\vendors\images\profile-photo.jpg" />
+    <Content Include="Templates\Admin\vendors\images\register-page-img.png" />
+    <Content Include="Templates\Admin\vendors\images\safari.png" />
+    <Content Include="Templates\Admin\vendors\images\success.png" />
+    <Content Include="Templates\Admin\vendors\images\tick.svg" />
+    <Content Include="Templates\Admin\vendors\images\upload-file-img.jpg" />
+    <Content Include="Templates\Admin\vendors\images\wave.png" />
+    <Content Include="Templates\Admin\vendors\scripts\advanced-components.js" />
+    <Content Include="Templates\Admin\vendors\scripts\apexcharts-setting.js" />
+    <Content Include="Templates\Admin\vendors\scripts\calendar-setting.js" />
+    <Content Include="Templates\Admin\vendors\scripts\colorpicker.js" />
+    <Content Include="Templates\Admin\vendors\scripts\core.js" />
+    <Content Include="Templates\Admin\vendors\scripts\dashboard.js" />
+    <Content Include="Templates\Admin\vendors\scripts\dashboard2.js" />
+    <Content Include="Templates\Admin\vendors\scripts\datatable-setting.js" />
+    <Content Include="Templates\Admin\vendors\scripts\highchart-setting.js" />
+    <Content Include="Templates\Admin\vendors\scripts\jvectormap-setting.js" />
+    <Content Include="Templates\Admin\vendors\scripts\knob-chart-setting.js" />
+    <Content Include="Templates\Admin\vendors\scripts\layout-settings.js" />
+    <Content Include="Templates\Admin\vendors\scripts\process.js" />
+    <Content Include="Templates\Admin\vendors\scripts\range-slider-setting.js" />
+    <Content Include="Templates\Admin\vendors\scripts\script.min.js" />
+    <Content Include="Templates\Admin\vendors\scripts\steps-setting.js" />
+    <Content Include="Templates\Admin\vendors\styles\core.css" />
+    <Content Include="Templates\Admin\vendors\styles\icon-font.min.css" />
+    <Content Include="Templates\Admin\vendors\styles\mCSB_buttons.html" />
+    <Content Include="Templates\Admin\vendors\styles\style.css" />
+    <Content Include="Templates\Front\css\bootstrap.min.css" />
+    <Content Include="Templates\Front\css\fancybox.min.css" />
+    <Content Include="Templates\Front\css\flaticon.css" />
+    <Content Include="Templates\Front\css\fonts\flaticona1f9a1f9.svg" />
+    <Content Include="Templates\Front\css\icon-font.css" />
+    <Content Include="Templates\Front\css\odometer.min.css" />
+    <Content Include="Templates\Front\css\style.css" />
+    <Content Include="Templates\Front\css\swiper.min.css" />
+    <Content Include="Templates\Front\img\client-bg.png" />
+    <Content Include="Templates\Front\img\client1.png" />
+    <Content Include="Templates\Front\img\client10.png" />
+    <Content Include="Templates\Front\img\client100.png" />
+    <Content Include="Templates\Front\img\client11.png" />
+    <Content Include="Templates\Front\img\client2.png" />
+    <Content Include="Templates\Front\img\client22.png" />
+    <Content Include="Templates\Front\img\client3.png" />
+    <Content Include="Templates\Front\img\client33.png" />
+    <Content Include="Templates\Front\img\client4.png" />
+    <Content Include="Templates\Front\img\client44.png" />
+    <Content Include="Templates\Front\img\client5.png" />
+    <Content Include="Templates\Front\img\client55.png" />
+    <Content Include="Templates\Front\img\client6.png" />
+    <Content Include="Templates\Front\img\client66.png" />
+    <Content Include="Templates\Front\img\client7.png" />
+    <Content Include="Templates\Front\img\client77.png" />
+    <Content Include="Templates\Front\img\client8.png" />
+    <Content Include="Templates\Front\img\client88.png" />
+    <Content Include="Templates\Front\img\client9.png" />
+    <Content Include="Templates\Front\img\client99.png" />
+    <Content Include="Templates\Front\img\divider.jpg" />
+    <Content Include="Templates\Front\img\facebook.png" />
+    <Content Include="Templates\Front\img\facebook1.png" />
+    <Content Include="Templates\Front\img\favicon.png" />
+    <Content Include="Templates\Front\img\footer-bg.jpg" />
+    <Content Include="Templates\Front\img\go-top.png" />
+    <Content Include="Templates\Front\img\google1.png" />
+    <Content Include="Templates\Front\img\instagram1.png" />
+    <Content Include="Templates\Front\img\instagram2.png" />
+    <Content Include="Templates\Front\img\loader.png" />
+    <Content Include="Templates\Front\img\logo-footer.png" />
+    <Content Include="Templates\Front\img\logo.png" />
+    <Content Include="Templates\Front\img\news1-banner.png" />
+    <Content Include="Templates\Front\img\news1.png" />
+    <Content Include="Templates\Front\img\news2-banner.png" />
+    <Content Include="Templates\Front\img\news2.png" />
+    <Content Include="Templates\Front\img\news3-banner.png" />
+    <Content Include="Templates\Front\img\news3.png" />
+    <Content Include="Templates\Front\img\news4-banner.png" />
+    <Content Include="Templates\Front\img\news4.png" />
+    <Content Include="Templates\Front\img\news5-banner.png" />
+    <Content Include="Templates\Front\img\news5.png" />
+    <Content Include="Templates\Front\img\news6-banner.png" />
+    <Content Include="Templates\Front\img\news6.png" />
+    <Content Include="Templates\Front\img\news7-banner.png" />
+    <Content Include="Templates\Front\img\news7.png" />
+    <Content Include="Templates\Front\img\page-header.jpg" />
+    <Content Include="Templates\Front\img\quality-bg.png" />
+    <Content Include="Templates\Front\img\section-bg.png" />
+    <Content Include="Templates\Front\img\service-bg.jpg" />
+    <Content Include="Templates\Front\img\service1.jpg" />
+    <Content Include="Templates\Front\img\service2.jpg" />
+    <Content Include="Templates\Front\img\service3.jpg" />
+    <Content Include="Templates\Front\img\service4.jpg" />
+    <Content Include="Templates\Front\img\service5.jpg" />
+    <Content Include="Templates\Front\img\service6.jpg" />
+    <Content Include="Templates\Front\img\services1.png" />
+    <Content Include="Templates\Front\img\services2.png" />
+    <Content Include="Templates\Front\img\services3.png" />
+    <Content Include="Templates\Front\img\services4.png" />
+    <Content Include="Templates\Front\img\services5.png" />
+    <Content Include="Templates\Front\img\services6.png" />
+    <Content Include="Templates\Front\img\shield-security.png" />
+    <Content Include="Templates\Front\img\slide1.jpg" />
+    <Content Include="Templates\Front\img\slide2.jpg" />
+    <Content Include="Templates\Front\img\slide3.jpg" />
+    <Content Include="Templates\Front\img\slide4.jpg" />
+    <Content Include="Templates\Front\img\team1.png" />
+    <Content Include="Templates\Front\img\team2.png" />
+    <Content Include="Templates\Front\img\team3.png" />
+    <Content Include="Templates\Front\img\team4.png" />
+    <Content Include="Templates\Front\img\testimonial1.png" />
+    <Content Include="Templates\Front\img\testimonial2.png" />
+    <Content Include="Templates\Front\img\testimonial3.png" />
+    <Content Include="Templates\Front\img\testimonial4.png" />
+    <Content Include="Templates\Front\img\twitter.png" />
+    <Content Include="Templates\Front\img\twitter1.png" />
+    <Content Include="Templates\Front\js\3d.jquery.js" />
+    <Content Include="Templates\Front\js\bootstrap.min.js" />
+    <Content Include="Templates\Front\js\fancybox.min.js" />
+    <Content Include="Templates\Front\js\jquery-1.11.3.min.js" />
+    <Content Include="Templates\Front\js\jquery.min.js" />
+    <Content Include="Templates\Front\js\odometer.min.js" />
+    <Content Include="Templates\Front\js\pointer.js" />
+    <Content Include="Templates\Front\js\scripts.js" />
+    <Content Include="Templates\Front\js\swiper.min.js" />
+    <Content Include="Templates\Front\js\team.js" />
+    <Content Include="Templates\Front\js\wow.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB_SQL_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_SQL_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB_SQL_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_SQL_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB_SQL_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_SQL_Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\tb_branches.cs">
+      <DependentUpon>DB_SQL_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tb_Client_Sub_Services.cs">
+      <DependentUpon>DB_SQL_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tb_Services.cs">
+      <DependentUpon>DB_SQL_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tb_Sub_Services.cs">
+      <DependentUpon>DB_SQL_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tb_Users.cs">
+      <DependentUpon>DB_SQL_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tb_Vacancies.cs">
+      <DependentUpon>DB_SQL_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\AdminModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <EntityDeploy Include="Models\DB_SQL_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DB_SQL_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DB_SQL_Model.edmx.diagram">
+      <DependentUpon>DB_SQL_Model.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\Admin\_LayoutBasicAdmin.cshtml" />
+    <Content Include="Templates\Admin\vendors\fonts\dropways4412.eot" />
+    <Content Include="Templates\Admin\vendors\fonts\dropways4412.ttf" />
+    <Content Include="Templates\Admin\vendors\fonts\dropways4412.woff" />
+    <Content Include="Templates\Admin\vendors\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Templates\Admin\vendors\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Templates\Admin\vendors\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Templates\Admin\vendors\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="Templates\Admin\vendors\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Templates\Admin\vendors\fonts\foundation-icons.eot" />
+    <Content Include="Templates\Admin\vendors\fonts\foundation-icons.ttf" />
+    <Content Include="Templates\Admin\vendors\fonts\foundation-icons.woff" />
+    <Content Include="Templates\Admin\vendors\fonts\foundation-iconsd41d.eot" />
+    <Content Include="Templates\Admin\vendors\fonts\ionicons790f.eot" />
+    <Content Include="Templates\Admin\vendors\fonts\ionicons790f.ttf" />
+    <Content Include="Templates\Admin\vendors\fonts\ionicons790f.woff" />
+    <Content Include="Templates\Admin\vendors\fonts\themify9f24.eot" />
+    <Content Include="Templates\Admin\vendors\fonts\themify9f24.ttf" />
+    <Content Include="Templates\Admin\vendors\fonts\themify9f24.woff" />
+    <Content Include="Templates\Admin\vendors\fonts\themifyd41d.eot" />
+    <Content Include="Views\Shared\Front\_LayoutbasicFront.cshtml" />
+    <Content Include="Templates\Front\css\fonts\flaticona1f9a1f9.eot" />
+    <Content Include="Templates\Front\css\fonts\flaticona1f9a1f9.ttf" />
+    <Content Include="Templates\Front\css\fonts\flaticona1f9a1f9.woff" />
+    <Content Include="Templates\Front\css\fonts\flaticona1f9a1f9.woff2" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\Building_Security.cshtml" />
+    <Content Include="Views\Home\Recruitment_and_training.cshtml" />
+    <Content Include="Views\Home\Cash_Services.cshtml" />
+    <Content Include="Views\Home\Clients.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Admin\Register.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Manned_Guarding.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54990</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44378/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.AspNetCore.Identity.UI.6.0.5\build\Microsoft.AspNetCore.Identity.UI.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.AspNetCore.Identity.UI.6.0.5\build\Microsoft.AspNetCore.Identity.UI.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.AspNetCore.Identity.UI.6.0.5\build\Microsoft.AspNetCore.Identity.UI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.AspNetCore.Identity.UI.6.0.5\build\Microsoft.AspNetCore.Identity.UI.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.AspNetCore.Identity.UI.6.0.5\build\Microsoft.AspNetCore.Identity.UI.targets" Condition="Exists('..\packages\Microsoft.AspNetCore.Identity.UI.6.0.5\build\Microsoft.AspNetCore.Identity.UI.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

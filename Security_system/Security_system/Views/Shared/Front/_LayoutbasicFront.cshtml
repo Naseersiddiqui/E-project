@@ -1,0 +1,201 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="~/Templates/Front/css/icon-font.css">
+    <link rel="stylesheet" href="~/Templates/Front/css/style.css">
+    <link rel="stylesheet" href="~/Templates/Front/css/fancybox.min.css">
+    <link rel="stylesheet" href="~/Templates/Front/css/swiper.min.css">
+    <link rel="stylesheet" href="~/Templates/Front/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Templates/Front/css/odometer.min.css">
+    <link rel="stylesheet" href="~/Templates/Front/css/swiper.min.css">
+    <link rel="stylesheet" href="~/Templates/Front/css/flaticon.css">
+    <title>Shield - Security & Protection Service</title>
+    <link rel="shortcut icon" type="image/png" href="~/Templates/Front/img/favicon.png">
+    <meta name="description" content="We Do Security Service, Questioning and Researching Studies.">
+</head>
+<body>
+    <div class="preloader">
+        <figure> <img src="~/Templates/Front/img/loader.png" alt="Image"> </figure>
+    </div>
+    <div class="page-transition"></div>
+    <aside class="side-widget">
+        <div class="inner">
+            <!-- Logo Menu Mobile -->
+            <div class="logo"> <a href="@Url.Action("Index", "Home")"><img src="~/Templates/Front/img/logo.png" alt="Image"></a> </div>
+            <div class="hide-mobile">
+                <div class="or">
+                    <h2 class="h2-baslik-anasayfa-ozel1"> Contact Information </h2>
+                </div>
+                <div class="bosluk2dt"></div>
+                <div class="iconsv"><i class="flaticon-call"></i></div>
+                <address class="address">
+                    <p>
+                        <a href="#">+1 (234) 567 89 10</a>
+                        <div class="bosluk2dt"></div>
+                        <div class="iconsv"><i class="flaticon-email"></i></div>
+                        <a href="#">example@example.com</a>
+                        <div class="bosluk2dt"></div>
+                        <div class="iconsv"><i class="flaticon-location"></i></div>
+                        <a href="#">New Jersey, USA</a>
+                        <div class="bosluk2dt"></div>
+                        <div class="or">
+                            <a href="#"><img src="~/Templates/Front/img/facebook1.png" alt=""></a>
+                            <a href="#"><img src="~/Templates/Front/img/instagram1.png" alt=""></a>
+                            <a href="#"><img src="~/Templates/Front/img/twitter1.png" alt=""></a>
+                            <a href="#"><img src="~/Templates/Front/img/google1.png" alt=""></a>
+                        </div>
+                    </p>
+                </address>
+            </div>
+            <div class="show-mobile">
+                <div class="site-menu">
+                    <ul class="menu">
+                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+                        <li>
+                            <a href="@Url.Action("Services", "Home")">Services </a><span class="sb" style="font-size: 18px">+</span>
+                                                                                   <ul class="dropdown-menu">
+                                                                                       <li><a class="dropdown-item" href="@Url.Action("Building_Security", "Home")">Building & Facility Security</a></li>
+
+                                                                                       <li><a class="dropdown-item" href="@Url.Action("Manned_Guarding", "Home")">Manned Guarding</a></li>
+                                                                                       <li><a class="dropdown-item" href="@Url.Action("Cash_Services", "Home")">Cash Services</a></li>
+                                                                                       <li><a class="dropdown-item" href="@Url.Action("Recruitment_and_training", "Home")">Recruitment and traning</a></li>
+
+                                                                                   </ul>
+                        </li>
+                        <li><a href="@Url.Action("Clients", "Home")">Clients</a></li>
+                        <li><a href="@Url.Action("Blog", "Home")">Blog</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <small>© 2022 - Shield</small>
+        </div>
+    </aside>
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo Menu Desktop -->
+            <div class="logo"> <a href="index.html"><img src="~/Templates/Front/img/logo.png" alt="Image"></a> </div>
+            <div class="site-menu">
+                <ul class="menueffect">
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+                    <li>
+                        <a href="@Url.Action("Services", "Home")">Services +</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="@Url.Action("Building_Security", "Home")">Building & Facility Security</a></li>
+
+                            <li><a class="dropdown-item" href="@Url.Action("Manned_Guarding", "Home")">Manned Guarding</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Cash_Services", "Home")">Cash Services</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("Recruitment_and_training", "Home")">Recruitment and traning</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="@Url.Action("Clients", "Home")">Clients</a></li>
+                    <li><a href="@Url.Action("Blog", "Home")">Blog</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="hamburger-menu"> <span></span> <span></span> <span></span> </div>
+            <div class="navbar-button"> <a href="#"><i class="flaticon-call iconp"></i>&nbsp;&nbsp;&nbsp;+1 (234) 567 89 10</a> </div>
+        </div>
+    </nav>
+
+
+    @RenderBody()
+
+    <!--Footer Alanı-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="logo wow fadeInUp" data-wow-delay="0.3s"> <img src="~/Templates/Front/img/logo-footer.png" alt="Image"> </div>
+                    <!-- end logo -->
+                    <div class="footer-info wow fadeInUp" data-wow-delay="0.4s">
+                        <p><i class="flaticon-call iconpfooter"></i>&nbsp;&nbsp;&nbsp;+123 456 789</p><br>
+                        <div class="bosluk04"></div>
+                        <p><i class="flaticon-email iconpfooter"></i>&nbsp;&nbsp;&nbsp;example@example.com</p><br>
+                        <p><i class="flaticon-location iconpfooter"></i>New Jersey, America</p>
+                    </div>
+                    <!-- end footer-info -->
+                    <ul class="footer-social wow fadeInUp" data-wow-delay="0.5s">
+                        <li><a href="#"><img width="25" height="25" src="~/Templates/Front/img/facebook.png" alt="Facebook"></a></li>
+                        <li><a href="#"><img width="25" height="25" src="~/Templates/Front/img/instagram2.png" alt="Instagram"></a></li>
+                        <li><a href="#"><img width="25" height="25" src="~/Templates/Front/img/twitter.png" alt="Twitter"></a></li>
+                    </ul>
+                </div>
+                <!-- end col-3 -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                    <h6 class="widget-title">Shield - Security & Protection Service</h6>
+                    <p class="footerp">
+                        With our competent experience, it operates in many areas with Security,
+                        Education, Building and Facility Security, Hospital Security, Hotel Security,
+                        Range, Occupational Safety and Close Protection services.
+                    </p><br>
+
+                    <a href="contact-us.html" class="custom-button">CONTACT US</a>
+                </div>
+                <!-- end col-4 -->
+                <div class="col-lg-2 offset-xl-1 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <h6 class="widget-title">Services</h6>
+                    <ul class="footer-menu">
+                        <li><a class="dropdown-item" href="@Url.Action("Building_Security", "Home")">Building & Facility Security</a></li>
+
+                        <li><a class="dropdown-item" href="@Url.Action("Manned_Guarding", "Home")">Manned Guarding</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Cash_Services", "Home")">Cash Services</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Recruitment_and_training", "Home")">Recruitment and traning</a></li>
+                    </ul>
+                </div>
+                <!-- end col-2 -->
+                <div class="col-lg-2 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <h6 class="widget-title">Quick Links</h6>
+                    <ul class="footer-menu">
+                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+                        <li><a href="@Url.Action("Services", "Home")">Services</a></li>
+                        <li><a href="@Url.Action("Clients", "Home")">Clients</a></li>
+                        <li><a href="@Url.Action("Blog", "Home")">Blog</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- end col-2 -->
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.9s">
+                    <p class="copyright">© 2022 Shield - All Rights Reserved.</p>
+                </div>
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <div id="top" style="cursor: pointer;">
+            <img width="50" height="50" src="~/Templates/Front/img/go-top.png" alt="" />
+        </div>
+        <script src="~/Templates/Front/js/team.js"></script>
+        <script src="~/Templates/Front/js/jquery.min.js"></script>
+        <script src="~/Templates/Front/js/bootstrap.min.js"></script>
+        <script src="~/Templates/Front/js/fancybox.min.js"></script>
+        <script src="~/Templates/Front/js/swiper.min.js"></script>
+        <script src="~/Templates/Front/js/odometer.min.js"></script>
+        <script src="~/Templates/Front/js/wow.min.js"></script>
+        <script src="~/Templates/Front/js/scripts.js"></script>
+        <script src="~/Templates/Front/js/3d.jquery.js"></script>
+        <script src="~/Templates/Front/js/pointer.js"></script>
+        <!--Cursor Script-->
+        <script>
+            init_pointer({
+
+            })
+        </script>
+    </footer>
+</body>
+
+
+</html>
