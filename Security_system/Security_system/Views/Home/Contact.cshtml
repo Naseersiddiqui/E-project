@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/Front/_LayoutbasicFront.cshtml";
+}
+
+<header class="page-header wow fadeInUp" data-wow-delay="0.5s" data-background=url('/Templates/Front/img/page-header.jpg')>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="bosluk3"></div>
+        <p><a href="@Url.Action("Index", "Home")">Home</a> <i class="flaticon-right-chevron"></i> Contact Us </p>
+    </div>
+    <!-- end container -->
+</header>
+<main>
+    <!--İletişim İcon Alanı-->
+    <section class="iletisim-icon-alani">
+        <div class="tablo">
+            <!--telefon 1-->
+            <div class="tablo--1-ve-3 wow fadeInLeft" data-wow-delay="0.3s">
+                <div class="ozellik-kutu-iletisim" onclick="location.href='tel:03122264478';" style="cursor:pointer;" data-tilt>
+                    <div class="icon"><i class="flaticon-call"></i></div>
+                    <h3 class="baslik-4 h-yazi-margin-kucuk-2">Customer service</h3>
+                    <p class="ozellik-kutu-iletisim--yazi">
+                        0312-2264478
+                    </p>
+                </div>
+            </div>
+            <!--mail 2-->
+            <div class="tablo--1-ve-3 wow fadeInLeft" data-wow-delay="0.4s">
+                <div class="ozellik-kutu-iletisim" onclick="location.href='mailto:naseerbhai770@gmail.com';" style="cursor:pointer;" data-tilt>
+                    <div class="icon"><i class="flaticon-email"></i></div>
+                    <h3 class="baslik-4 h-yazi-margin-kucuk-2">Mail Address</h3>
+                    <p class="ozellik-kutu-iletisim--yazi">
+                        example@example.com
+                    </p>
+                </div>
+            </div>
+            <!--adres 3-->
+            <div class="tablo--1-ve-3 wow fadeInRight" data-wow-delay="0.5s">
+                <div class="ozellik-kutu-iletisim" onclick="location.href='https://goo.gl/maps/dSGtD7pcer4zp4Q56';" style="cursor:pointer;" data-tilt>
+                    <div class="icon"><i class="flaticon-location"></i></div>
+                    <h3 class="baslik-4 h-yazi-margin-kucuk-2">Office</h3>
+                    <p class="ozellik-kutu-iletisim--yazi">
+                        Yeşilpınar Mh. Tepe Sk. Eyüp İstanbul
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--İletişim Form Alanı-->
+    <section class="iletisim-form-alani">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <form action="https://garantiwebtasarim.com/shield-security-and-protection-service/contactform.php" class="form" method="post">
+                        <div class="form__grup wow fadeInLeft" data-wow-delay="0.5s">
+                            <input type="text" class="form__input" placeholder="Full Name" id="txt_isim" name="name" required>
+                            <label for="name" class="form__label">Full Name</label>
+                        </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form__grup wow fadeInLeft" data-wow-delay="0.6s">
+                        <input type="email" class="form__input" placeholder="Email Address" id="txt_eposta" name="email" required>
+                        <label for="email" class="form__label">Email Address</label>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form__grup wow fadeInRight" data-wow-delay="0.7s">
+                        <input type="text" class="form__input" placeholder="Phone Number" id="txt_telefon" name="telefon" required>
+                        <label for="telefon" class="form__label">Phone Number</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form__grup wow fadeInUp" data-wow-delay="0.8s">
+                        <textarea name="message" placeholder="Your Message" id="txt_mesaj" class="form__input"></textarea>
+                        <label for="message" class="form__label"> Your Message ...</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form__grup wow fadeInUp" data-wow-delay="0.9s">
+                        <button class="buton-contact buton-contact--kirmizi" id="btn_Gonder">SEND</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </form>
+        </div>
+
+        </div>
+    </section>
+</main>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1563266.1918335108!2d-75.84536893896656!3d40.06973977396647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c0fb959e00409f%3A0x2cd27b07f83f6d8d!2sNew%20Jersey%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1645136392814!5m2!1str!2str" width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+<script>
+    $(document).ready(function () {
+        $('#btn_Gonder').click(function () {
+
+            //alert("test");
+
+            var isim = $('#txt_isim').val();
+            var eposta = $('#txt_eposta').val();
+            var telefon = $('#txt_telefon').val();
+            var mesaj = $('#txt_mesaj').val();
+            var json_data = {};
+            json_data.isim = isim;
+            json_data.eposta = eposta;
+            json_data.telefon = telefon;
+            json_data.mesaj = mesaj;
+            $.ajax({
+                url: "form/Contact-Form-Send.php",
+                method: "post",
+                data: json_data,
+                success: function (response) {
+                    if (response == "Success") {
+                        alert("Mesajınız Gönderildi.");
+                    } else if (response == "Failed") {
+                        alert("Mesajınız Gönderilemedi. Lütfen Tekrar Deneyiniz.");
+                    }
+                    console.log(response);
+                    if (response.trim() == "Success") console.log("Success");
+                    else
+                        console.log("Failed :  " + response);
+                }
+            });
+        });
+    });
+</script>

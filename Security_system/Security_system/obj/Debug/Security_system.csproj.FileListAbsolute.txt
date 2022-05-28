@@ -230,3 +230,5 @@ C:\Users\Naseer Siddiqui\Downloads\E-Project -ASP\Security_system\Security_syste
 C:\Users\Naseer Siddiqui\Downloads\E-Project -ASP\Security_system\Security_system\obj\Debug\Security_system.csproj.CopyComplete
 C:\Users\Naseer Siddiqui\Downloads\E-Project -ASP\Security_system\Security_system\obj\Debug\Security_system.dll
 C:\Users\Naseer Siddiqui\Downloads\E-Project -ASP\Security_system\Security_system\obj\Debug\Security_system.pdb
+C:\Users\Naseer Siddiqui\Desktop\E-Project -ASP\Security_system\Security_system\bin\NuGet.Frameworks.dll
+C:\Users\Naseer Siddiqui\Desktop\E-Project -ASP\Security_system\Security_system\bin\NuGet.Frameworks.xml

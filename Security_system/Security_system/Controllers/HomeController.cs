@@ -45,5 +45,9 @@ namespace Security_system.Controllers
         {
             return View();
         }
+        public ActionResult Contact()
+        {
+            return View();
+        }
     }
 }
